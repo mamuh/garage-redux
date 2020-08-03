@@ -1,4 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+body {
+  background-color: #F4F4F4;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+}
+
+
+.cars-index {
+  flex: 0 0 70%;
+  background-color: #DBDBDB;
+}
+
+.sidebar {
+  flex: 0 0 30%;
+  background-color: white;
+}
+
+
+.car {
+  height: 120px;
+  padding: 10px;
+  img {
+    float: left;
+  }
 }

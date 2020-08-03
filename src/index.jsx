@@ -9,18 +9,26 @@ import { createHistory as history } from 'history';
 
 import '../assets/stylesheets/application.scss';
 
-const reducers = combineReducers({
-  // key: reducer
-});
+import App from './components/app';
+
+import carsReducer from './reducers/cars_reducer';
+
+const reducers = combineReducers({cars: carsReducer});
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const middlewares = applyMiddleware(reduxPromise, logger);
 
+const initialState = {
+  cars: []
+}
+
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, composeEnhancers(middlewares))}>
     <Router history={history}>
       <Switch>
-        TODO
+        <Route path="/" exact component={App} />
       </Switch>
     </Router>
   </Provider>,
