@@ -7,23 +7,26 @@ export const fetchCars = (garage) => {
   }
 }
 
-export const addCar = (garage, body) => {
-  fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`, {
+export const addCar = (garage, body, callback) => {
+  const request = fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   })
   .then(response => response.json())
-  .then(data => {
-    return {
-      type: 'ADD_CAR',
-      payload: data
-    }
-    console.log('Success:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+  .then(callback);
+  return {
+    type: 'ADD_CAR',
+    payload: request
+  }
+  // .then(data => {
+  //   return {
+  //     type: 'ADD_CAR',
+  //     payload: data
+  //   }
+  //   console.log('Success:', data);
+  // })
+  // .catch((error) => {
+  //   console.error('Error:', error);
+  // });
 }

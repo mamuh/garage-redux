@@ -15,7 +15,7 @@ import carsReducer from './reducers/cars_reducer';
 
 const reducers = combineReducers({
   cars: carsReducer,
-  // form: formReducer
+  form: formReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
