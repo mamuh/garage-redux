@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { addCar } from '../actions';
+import { Link } from 'react-router-dom';
 
 class CarsNew extends Component {
   renderField(field) {
@@ -22,27 +23,48 @@ class CarsNew extends Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+      <div>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
 
-      <Field
-      className="form-control" label="brand" name="brand" type="text" component={this.renderField}
-      />
+        <Field
+          className="form-control"
+          label="brand"
+          name="brand"
+          type="text"
+          component={this.renderField}
+        />
 
-      <Field
-      className="form-control" label="model" name="model" type="text" component={this.renderField}
-      />
+        <Field
+          className="form-control"
+          label="model"
+          name="model"
+          type="text"
+          component={this.renderField}
+        />
 
-      <Field
-      className="form-control" label="owner" name="owner" type="text" component={this.renderField}
-      />
+        <Field
+          className="form-control"
+          label="owner"
+          name="owner"
+          type="text"
+          component={this.renderField}
+        />
 
-      <Field
-      className="form-control" label="plate" name="plate" type="text" component={this.renderField}
-      />
-      <button className="btn btn-primary" type="submit">
-          Create Post
-        </button>
-      </form>
+        <Field
+          className="form-control"
+          label="plate"
+          name="plate"
+          type="text"
+          component={this.renderField}
+        />
+        <button className="btn btn-primary" type="submit">
+            Add new car
+          </button>
+        </form>
+        <Link to="/">
+          Back
+        </Link>
+      </div>
     )
   }
 
