@@ -23,12 +23,13 @@ class CarsNew extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+      <div className="container mt-4 w-50">
+      <h3>Add new car</h3>
+        <form className="form-group" onSubmit={this.props.handleSubmit(this.onSubmit)}>
 
         <Field
           className="form-control"
-          label="brand"
+          label="Brand"
           name="brand"
           type="text"
           component={this.renderField}
@@ -36,7 +37,7 @@ class CarsNew extends Component {
 
         <Field
           className="form-control"
-          label="model"
+          label="Model"
           name="model"
           type="text"
           component={this.renderField}
@@ -44,7 +45,7 @@ class CarsNew extends Component {
 
         <Field
           className="form-control"
-          label="owner"
+          label="Owner"
           name="owner"
           type="text"
           component={this.renderField}
@@ -52,7 +53,7 @@ class CarsNew extends Component {
 
         <Field
           className="form-control"
-          label="plate"
+          label="Plate"
           name="plate"
           type="text"
           component={this.renderField}
