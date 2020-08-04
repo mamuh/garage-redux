@@ -29,3 +29,13 @@ export const fetchCar = (id) => {
     payload: promise
   }
 }
+
+export const deleteCar = (history, car) => {
+  fetch(`https://wagon-garage-api.herokuapp.com/cars/${car.id}`, {method: 'DELETE'})
+  .then(response => response.json())
+  .then(() => history.push(""))
+  return {
+    type: 'DELETE_CAR',
+    payload: car
+  }
+}

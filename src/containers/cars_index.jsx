@@ -12,14 +12,14 @@ class CarsIndex extends Component {
 
   renderCars = (car) => {
     return (
-      <Link to={`/cars/${car.id}`}>
-      <li className="card-product" key={car.id}>
-        <img src="https://i.pinimg.com/originals/bb/e9/0e/bbe90e4b183a7c06b6941053c8f63c18.jpg" />
-        <div className="card-product-infos">
-          <h2>{car.brand} {car.model}</h2>
-          <p><b>Owner:</b> {car.owner}</p>
-        </div>
-      </li>
+      <Link to={`/cars/${car.id}`} key={car.id}>
+        <li className="card-product" key={car.id}>
+          <img src="https://i.pinimg.com/originals/bb/e9/0e/bbe90e4b183a7c06b6941053c8f63c18.jpg" />
+          <div className="card-product-infos">
+            <h2>{car.brand} {car.model}</h2>
+            <p><b>Owner:</b> {car.owner}</p>
+          </div>
+        </li>
       </Link>
     )
   }

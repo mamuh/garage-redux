@@ -4,6 +4,8 @@ export default function carsReducer(state = [], action) {
       return action.payload
      case 'FETCH_CAR':
        return [ action.payload ]
+     case 'DELETE_CAR':
+       return state.filter(car => car !== action.payload)
      default:
       return state
    }
