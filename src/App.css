@@ -25,7 +25,7 @@ li {
 
 .sidebar {
   background-color: white;
-  padding: 20px;
+  padding: 25px;
   flex: 0 0 30%;
   height: 90vh;
 }
@@ -89,7 +89,7 @@ li {
 }
 
 .card-product-show p {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -143,4 +143,9 @@ li {
   background-color: transparent;
   font-size: 20px;
   text-align: center;
+}
+
+#back {
+  position: absolute;
+  bottom: 0;
 }

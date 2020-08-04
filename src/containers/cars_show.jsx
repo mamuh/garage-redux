@@ -3,6 +3,7 @@ import { fetchCar, deleteCar } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import SideBar from '../components/sidebar';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
@@ -33,7 +34,7 @@ class CarsShow extends Component {
               <h3>{car.brand} {car.model}</h3>
               <p><b>Owner:</b> {car.owner}</p>
               <p id="plate">{car.plate}</p>
-
+              <Link to="/" id="back">Back</Link>
               <button id="delete" onClick={this.handleClick}><FontAwesomeIcon icon={faTrashAlt} /> Delete</button>
             </div>
           </div>
