@@ -19,14 +19,13 @@ export const addCar = (garage, body, callback) => {
     type: 'ADD_CAR',
     payload: request
   }
-  // .then(data => {
-  //   return {
-  //     type: 'ADD_CAR',
-  //     payload: data
-  //   }
-  //   console.log('Success:', data);
-  // })
-  // .catch((error) => {
-  //   console.error('Error:', error);
-  // });
+}
+
+export const fetchCar = (id) => {
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`)
+  .then(response => response.json())
+  return {
+    type: 'FETCH_CAR',
+    payload: promise
+  }
 }

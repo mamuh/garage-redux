@@ -2,8 +2,8 @@ export default function carsReducer(state = [], action) {
    switch(action.type) {
      case 'FETCH_CARS':
       return action.payload
-     case 'ADD_CAR':
-     // todo
+     case 'FETCH_CAR':
+       return [ action.payload ]
      default:
       return state
    }
