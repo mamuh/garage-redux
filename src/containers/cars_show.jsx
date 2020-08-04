@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { fetchCar, deleteCar } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import SideBar from '../components/sidebar';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 class CarsShow extends Component {
   componentWillMount() {
@@ -20,14 +24,18 @@ class CarsShow extends Component {
     }
     const {car} = this.props
     return (
-      <div className="cars-index">
-        <div className="card-product" key={car.id}>
-          <img src="https://i.pinimg.com/originals/bb/e9/0e/bbe90e4b183a7c06b6941053c8f63c18.jpg" />
-          <div className="card-product-infos">
-            <h3>{car.brand} {car.model}</h3>
-            <p><b>Owner:</b> {car.owner}</p>
-            <p id="plate">{car.plate}</p>
-            <button onClick={this.handleClick}>Delete</button>
+      <div className="container d-flex justify-content-between">
+      <SideBar />
+        <div className="cars-index">
+          <div className="card-product-show" key={car.id}>
+            <img src="https://i.pinimg.com/originals/bb/e9/0e/bbe90e4b183a7c06b6941053c8f63c18.jpg" />
+            <div className="card-product-infos">
+              <h3>{car.brand} {car.model}</h3>
+              <p><b>Owner:</b> {car.owner}</p>
+              <p id="plate">{car.plate}</p>
+
+              <button id="delete" onClick={this.handleClick}><FontAwesomeIcon icon={faTrashAlt} /> Delete</button>
+            </div>
           </div>
         </div>
       </div>

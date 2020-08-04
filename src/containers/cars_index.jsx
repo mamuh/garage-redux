@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCars } from '../actions';
 import { Link } from 'react-router-dom';
+import SideBar from '../components/sidebar';
 
 class CarsIndex extends Component {
 
@@ -27,10 +28,13 @@ class CarsIndex extends Component {
   render() {
     const {cars} = this.props;
     return (
-      <div className="cars-index">
-        <ul>
-          {cars.map(this.renderCars)}
-         </ul>
+      <div className="container d-flex justify-content-between">
+        <SideBar />
+        <div className="cars-index">
+          <ul>
+            {cars.map(this.renderCars)}
+          </ul>
+        </div>
       </div>
     )
   }
