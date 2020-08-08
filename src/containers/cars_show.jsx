@@ -26,7 +26,7 @@ class CarsShow extends Component {
     const {car} = this.props
     return (
       <div className="container d-flex justify-content-between">
-      <SideBar />
+      <SideBar link={"/new"} />
         <div className="cars-index">
           <div className="card-product-show" key={car.id}>
             <img src="https://i.pinimg.com/originals/bb/e9/0e/bbe90e4b183a7c06b6941053c8f63c18.jpg" />
